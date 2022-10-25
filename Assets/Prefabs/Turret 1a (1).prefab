@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511794875461606005}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.9684421, z: 0.003124151}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -193,8 +193,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511794875623222231}
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.000000021855522, y: 0.00399334, z: 8.727721e-11, w: 0.9999921}
+  m_LocalPosition: {x: 0, y: -0.00000014191582, z: 0.0018346877}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -202,7 +202,7 @@ Transform:
   - {fileID: 511152816287356269}
   m_Father: {fileID: 511152814578327925}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.458, z: 0}
 --- !u!33 &535069012116010861
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -349,6 +349,7 @@ GameObject:
   - component: {fileID: 2362242941787989260}
   - component: {fileID: -256385034742012348}
   - component: {fileID: -5824559164281610929}
+  - component: {fileID: 1313641114919213169}
   m_Layer: 0
   m_Name: Turret 1a (1)
   m_TagString: Clone
@@ -416,6 +417,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1313641114919213169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511794877438999135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f742fbe4894c9d34d96cb2bb5cd04dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pylon: {fileID: 0}
+  radius: {fileID: 0}
 --- !u!1 &511794877733498279
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,3 +675,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4081228264680781260, guid: ffaeeb40117cb154489ae438a60a8757, type: 3}
   m_PrefabInstance: {fileID: 9034490443585767}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &6797558453476124778
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4072230060001144107}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 928.38385
+  m_Direction: 1
+  m_Center: {x: 0.00000007568844, y: 137.73627, z: -0.00000007568844}
