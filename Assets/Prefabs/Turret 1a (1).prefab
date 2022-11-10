@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 511152816287356269}
   - component: {fileID: 535069008089038743}
   - component: {fileID: 524802776040535349}
+  - component: {fileID: 6342631241748020734}
+  - component: {fileID: 6263439955350372628}
   m_Layer: 0
   m_Name: Pylon
   m_TagString: Untagged
@@ -85,6 +87,46 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6342631241748020734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511794875461606005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f742fbe4894c9d34d96cb2bb5cd04dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  inCollider: 0
+  i: 0
+  j: 0
+--- !u!136 &6263439955350372628
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511794875461606005}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 15
+  m_Height: 50
+  m_Direction: 1
+  m_Center: {x: 0.00072097784, y: 2.2061749, z: -0.0026620927}
 --- !u!1 &511794875579184043
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,7 +391,6 @@ GameObject:
   - component: {fileID: 2362242941787989260}
   - component: {fileID: -256385034742012348}
   - component: {fileID: -5824559164281610929}
-  - component: {fileID: 1313641114919213169}
   m_Layer: 0
   m_Name: Turret 1a (1)
   m_TagString: Clone
@@ -417,20 +458,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &1313641114919213169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 511794877438999135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f742fbe4894c9d34d96cb2bb5cd04dd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pylon: {fileID: 0}
-  radius: {fileID: 0}
 --- !u!1 &511794877733498279
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,7 +712,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
+  m_Radius: 0.5011179
   m_Height: 928.38385
   m_Direction: 1
-  m_Center: {x: 0.00000007568844, y: 137.73627, z: -0.00000007568844}
+  m_Center: {x: 0.00000007568844, y: 137.73627, z: 0.0011176912}
