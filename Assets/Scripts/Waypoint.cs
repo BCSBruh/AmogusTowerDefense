@@ -7,6 +7,8 @@ public class Waypoint : MonoBehaviour
     [Range(0f, 2f)]
     [SerializeField] private float waypointSize = 1f;
 
+    [SerializeField] public static Transform[] points;
+
     private void OnDrawGizmos()
     {
         foreach(Transform t in transform)
@@ -22,20 +24,12 @@ public class Waypoint : MonoBehaviour
         }
     }
 
-    public Transform GetNextWaypoint(Transform currentWaypoint)
+    private void Awake()
     {
-        if (currentWaypoint == null)
+        points = new Transform[transform.childCount];
+        for (int i = 0; i < points.Length; i++)
         {
-            return transform.GetChild(0);
-        }
-
-        if (currentWaypoint.GetSiblingIndex() < transform.childCount - 1)
-        {
-            return transform.GetChild(currentWaypoint.GetSiblingIndex() + 1);
-        }
-        else
-        {
-            return transform.GetChild(0);
+            points[i] = transform.GetChild(i);
         }
     }
 }

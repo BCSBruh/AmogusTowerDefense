@@ -2,25 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static SpawnManager;
 
 public class Enemy : MonoBehaviour
 {
+    public int health = 100;
+    public int value = 50;
 
-    // Start is called before the first frame update
-    void Start()
+    public void TakeDamage(int damage)
     {
-        
+        health -= damage;
+
+        if (health <= 0)
+            Die();
     }
 
-    // Update is called once per frame
-    void Update()
+    void Die()
     {
-        
-    }
-
-    private void OnMouseDown()
-    {
+        PlayerStats.money += value;
         Destroy(gameObject);
-
     }
 }

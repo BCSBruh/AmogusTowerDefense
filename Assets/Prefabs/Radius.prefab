@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 539998689423085638}
   - component: {fileID: 3252140359687689720}
   - component: {fileID: 2749370140046287129}
-  - component: {fileID: 1981991621583547797}
   m_Layer: 0
   m_Name: Radius
   m_TagString: Radius
@@ -84,17 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &1981991621583547797
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4081228264680781260}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: -0.000000007450581, z: -0.00000010430813}

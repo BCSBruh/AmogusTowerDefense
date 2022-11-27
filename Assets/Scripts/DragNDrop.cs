@@ -17,7 +17,7 @@ public class DragNDrop : MonoBehaviour
         radius.SetActive(false);
     }
 
-    private Vector3 GetMouseWorldPosition()
+    public static Vector3 GetMouseWorldPosition()
     {
         //Capture mouse postion and return that point in thbe world
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);

@@ -6,40 +6,36 @@ using TMPro;
 public class WaypointMover : MonoBehaviour
 {
     //Reference the waypoint objects
-    [SerializeField] public Waypoint waypoints;
-    [SerializeField] private float moveSpeed = 10;
-    [SerializeField] private float distanceAmount = .001f;
+    [SerializeField] private float speed = 3f;
+    [SerializeField] private Transform target;
 
-    private Vector3 lastWaypointPos = new Vector3(-27f, 1.15f, -1.86f);
+    private int wavepointIndex;
 
-    //Current waypoint to move towards
-    private Transform currentWaypoint;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-
-        //Set init position to start of track
-        currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
-        transform.position = currentWaypoint.position;
-
-        //Set next waypoint target
-        currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
+        target = Waypoint.points[0];
+        transform.position = target.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, currentWaypoint.position, moveSpeed * Time.deltaTime);
-        if (Vector3.Distance(transform.position, currentWaypoint.position) < distanceAmount)
-        {
-            currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
-            transform.LookAt(currentWaypoint);
-        }
+        Vector3 dir = target.position - transform.position;
+        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 
-        if (gameObject.transform.position.x < lastWaypointPos.x)
+        if (Vector3.Distance(transform.position, target.position) <= 0.1f)
+            GetNextWaypoint();
+    }
+
+    private void GetNextWaypoint()
+    {
+        if (wavepointIndex >= Waypoint.points.Length - 1)
         {
             Destroy(gameObject);
+            PlayerStats.lives -= 1;
         }
+
+        wavepointIndex++;
+        target = Waypoint.points[wavepointIndex];
+        transform.LookAt(target);
     }
 }

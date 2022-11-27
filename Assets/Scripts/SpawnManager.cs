@@ -8,7 +8,6 @@ public class SpawnManager : MonoBehaviour
 { 
 
     [SerializeField] public int numPopped = 0;
-    [SerializeField] TextMeshProUGUI popped;
 
     public enum SpawnState
     {
@@ -41,8 +40,6 @@ public class SpawnManager : MonoBehaviour
 
     private void Update()
     {
-        popped.SetText("Popped: " + numPopped);
-
         if (state == SpawnState.WIATING)
         {
             if(!EnemyIsAlive())
@@ -88,6 +85,8 @@ public class SpawnManager : MonoBehaviour
         {
             nextWave++;
         }
+
+        PlayerStats.rounds++;
     }
 
     bool EnemyIsAlive()
