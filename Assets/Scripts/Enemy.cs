@@ -6,20 +6,18 @@ using static SpawnManager;
 
 public class Enemy : MonoBehaviour
 {
-    public int health = 100;
-    public int value = 50;
-
+    public EnemyBlueprint enemy;
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        enemy.health -= damage;
 
-        if (health <= 0)
+        if (enemy.health <= 0)
             Die();
     }
 
     void Die()
     {
-        PlayerStats.money += value;
+        PlayerStats.money += enemy.value;
         Destroy(gameObject);
     }
 }

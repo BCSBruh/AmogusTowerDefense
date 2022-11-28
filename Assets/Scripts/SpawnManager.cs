@@ -126,4 +126,17 @@ public class SpawnManager : MonoBehaviour
         Instantiate(_enemy);
         Debug.Log("Spawning Enemy");
     }
+
+    public void SkipWave()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Amogus");
+        for (int j = 0; j < enemies.Length; j++)
+        {
+            Destroy(enemies[j]);
+        }
+
+        StopCoroutine(SpawnWave(waves[nextWave]));
+        state = SpawnState.WIATING;
+        WaveCompleted();
+    }
 }

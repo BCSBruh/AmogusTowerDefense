@@ -13,6 +13,7 @@ public class TrackNShoot : MonoBehaviour
 
     [Header("Game Objects")]
     [SerializeField] private GameObject laser;
+    private AudioSource gunSound;
 
     [Header("Variables")]
     [SerializeField] private float range = 5f;
@@ -25,6 +26,7 @@ public class TrackNShoot : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        gunSound = GetComponent<AudioSource>();
     }
 
     private void UpdateTarget()
@@ -87,6 +89,8 @@ public class TrackNShoot : MonoBehaviour
 
         if (shooter != null)
             shooter.Seek(target);
+
+        gunSound.Play();
     }
 
     private void OnDrawGizmosSelected()

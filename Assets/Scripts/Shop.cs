@@ -21,11 +21,21 @@ public class Shop : MonoBehaviour
     public void PurchaseLvl2Turret()
     {
         Debug.Log("Level 2 Turret Purchased");
+        bool canBuy = checkPurchasable(turret2);
+        if (canBuy)
+            Instantiate(turret2.prefab, spawnPos, Quaternion.identity);
+
+        Debug.Log("Money left = " + PlayerStats.money);
     }
 
     public void PurchaseLvl3Turret()
     {
         Debug.Log("Level 3 Turret Purchased");
+        bool canBuy = checkPurchasable(turret3);
+        if (canBuy)
+            Instantiate(turret3.prefab, spawnPos, Quaternion.identity);
+
+        Debug.Log("Money left = " + PlayerStats.money);
     }
 
     private bool checkPurchasable(TurretBlueprint turret)
@@ -38,5 +48,20 @@ public class Shop : MonoBehaviour
             PlayerStats.money -= turret.cost;
             return true;
         }
+    }
+
+    public void SellLvl1Turret()
+    {
+        PlayerStats.money += turret1.sellPrice;
+    }
+
+    public void SellLvl2Turret()
+    {
+        PlayerStats.money += turret2.sellPrice;
+    }
+
+    public void SellLvl3Turret()
+    {
+        PlayerStats.money += turret3.sellPrice;
     }
 }

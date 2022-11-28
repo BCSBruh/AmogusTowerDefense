@@ -11,10 +11,12 @@ public class DragNDrop : MonoBehaviour
     public bool onTower = false;
 
     public GameObject radius;
+    public GameObject uiCanvas;
 
     public void Start()
     {
         radius.SetActive(false);
+        uiCanvas.SetActive(false);
     }
 
     public static Vector3 GetMouseWorldPosition()
@@ -27,6 +29,9 @@ public class DragNDrop : MonoBehaviour
     {
         radius.SetActive(true);
         mousePositionOffset = gameObject.transform.position - GetMouseWorldPosition();
+
+        if (isDone && onTower)
+            StartCoroutine(closeUI());
     }
 
     private void OnMouseDrag()
@@ -72,6 +77,13 @@ public class DragNDrop : MonoBehaviour
     private void OnMouseExit()
     {
         onTower = false;
+    }
+
+    IEnumerator closeUI()
+    {
+        uiCanvas.SetActive(true);
+        yield return new WaitForSecondsRealtime(5);
+        uiCanvas.SetActive(false);
     }
 
 }
